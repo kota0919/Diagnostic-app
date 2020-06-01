@@ -1,0 +1,190 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
+  <meta http-equiv="Content-Security-Policy" content="default-src * data: gap: https://ssl.gstatic.com; style-src * 'unsafe-inline'; script-src * 'unsafe-inline' 'unsafe-eval'">
+  <script src="components/loader.js"></script>
+  <script src="lib/onsenui/js/onsenui.min.js"></script>
+
+  <link rel="stylesheet" href="components/loader.css">
+  <link rel="stylesheet" href="lib/onsenui/css/onsenui.css">
+  <link rel="stylesheet" href="lib/onsenui/css/onsen-css-components.css">
+  <link rel="stylesheet" href="css/style.css">
+
+  <script>
+    // Page init event
+    document.addEventListener('init', function(event) {
+      var page = event.target;
+
+      if (page.matches('#first-page')) {
+
+        page.querySelector('#push-button-a').onclick = function() {
+          document.querySelector('#navigator').pushPage('page2.html');
+       };
+          page.querySelector('#push-button-b').onclick = function() {
+          document.querySelector('#navigator').pushPage('page3.html');
+        };
+
+      } else if (page.matches('#second-page')) {
+
+        page.querySelector('#push-button-c').onclick = function() {
+          document.querySelector('#navigator').pushPage('page4.html');
+        };
+
+        page.querySelector('#push-button-d').onclick = function() {
+          document.querySelector('#navigator').pushPage('page5.html');
+        };
+
+      } else if (page.matches('#third-page')) {
+
+        page.querySelector('#push-button-e').onclick = function() {
+          document.querySelector('#navigator').pushPage('page6.html');
+        };
+
+        page.querySelector('#push-button-f').onclick = function() {
+          document.querySelector('#navigator').pushPage('page7.html');
+        };
+      }else if (page.matches('#four-page')) {
+
+        page.querySelector('#push-button-g').onclick = function() {
+          document.querySelector('#navigator').pushPage('page1.html');
+        };
+       }else if (page.matches('#five-page')) {
+
+        page.querySelector('#push-button-h').onclick = function() {
+          document.querySelector('#navigator').pushPage('page1.html');
+        };
+       }else if (page.matches('#six-page')) {
+
+        page.querySelector('#push-button-g').onclick = function() {
+          document.querySelector('#navigator').pushPage('page1.html');
+        };
+
+      
+       }else if (page.matches('#seven-page')) {
+
+        page.querySelector('#push-button-h').onclick = function() {
+          document.querySelector('#navigator').pushPage('page1.html');
+        };
+       }
+    });
+
+    if (ons.platform.isIPhoneX()) {
+      document.documentElement.setAttribute('onsflag-iphonex-portrait', '');
+      document.documentElement.setAttribute('onsflag-iphonex-landscape', '');
+    }
+  </script>
+</head>
+<body>
+  <ons-navigator id="navigator" page="page1.html"></ons-navigator>
+
+  <ons-template id="page1.html">
+    <ons-page id="first-page">
+      <ons-toolbar>
+        <div class="center">１ページ目</div>
+      </ons-toolbar>
+
+      <div class="content" style="text-align: center">
+        <p>一つ目の質問です。あなたは犬が好きですか？
+        </p>
+        <ons-button id="push-button-a">好き</ons-button>
+        <ons-button id="push-button-b">嫌い</ons-button>
+      </div>
+    </ons-page>
+  </ons-template>
+
+  <ons-template id="page2.html">
+    <ons-page id="second-page">
+      <ons-toolbar>
+        <div class="left"><ons-back-button>Page 1</ons-back-button></div>
+        <div class="center">2ページ目</div>
+      </ons-toolbar>
+
+      <div class="content" style="text-align: center">
+        <p>猫は好きですか？</p>
+        <ons-button id="push-button-c">好き</ons-button>
+        <ons-button id="push-button-d">嫌い</ons-button>
+      </div>
+    </ons-page>
+  </ons-template>
+
+  <ons-template id="page3.html">
+    <ons-page id="third-page">
+      <ons-toolbar>
+        <div class="left"><ons-back-button>Page 1</ons-back-button></div>
+        <div class="center">３ページ目</div>
+      </ons-toolbar>
+
+      <div class="content" style="text-align: center">
+        <p>2つ目の質問です。猫は好きですか？</p>
+        <ons-button id="push-button-e">好き</ons-button>
+        <ons-button id="push-button-f">嫌い</ons-button>
+      </div>
+    </ons-page>
+  </ons-template>
+
+
+  <ons-template id="page4.html">
+    <ons-page id="four-page">
+      <ons-toolbar>
+        <div class="left"><ons-back-button>Page 2</ons-back-button></div>
+        <div class="center">4ページ目</div>
+      </ons-toolbar>
+
+      <div class="content" style="text-align: center">
+        <p>結果 あなたは犬、猫が好きです。</p>
+        <ons-button id="push-button-g">最初に戻る</ons-button>
+        
+      </div>
+    </ons-page>
+  </ons-template>
+
+  <ons-template id="page5.html">
+    <ons-page id="five-page">
+      <ons-toolbar>
+        <div class="left"><ons-back-button>Page 2</ons-back-button></div>
+        <div class="center">5ページ目</div>
+      </ons-toolbar>
+
+      <div class="content" style="text-align: center">
+        <p>結果 あなたは犬だけが好きです。</p>
+        <ons-button id="push-button-h">最初に戻る</ons-button>
+        
+      </div>
+    </ons-page>
+  </ons-template>
+
+  <ons-template id="page6.html">
+    <ons-page id="six-page">
+      <ons-toolbar>
+        <div class="left"><ons-back-button>Page 2</ons-back-button></div>
+        <div class="center">6ページ目</div>
+      </ons-toolbar>
+
+      <div class="content" style="text-align: center">
+        <p>結果 あなたは猫だけだけが好きです。</p>
+        <ons-button id="push-button-g">最初に戻る</ons-button>
+        
+      </div>
+    </ons-page>
+  </ons-template>
+
+  <ons-template id="page7.html">
+    <ons-page id="seven-page">
+      <ons-toolbar>
+        <div class="left"><ons-back-button>Page 2</ons-back-button></div>
+        <div class="center">7ページ目</div>
+      </ons-toolbar>
+
+      <div class="content" style="text-align: center">
+        <p>結果 あなたは犬、猫が好きではありません</p>
+        <ons-button id="push-button-h">最初に戻る</ons-button>
+        
+      </div>
+    </ons-page>
+  </ons-template>
+
+
+</body>
+</html>
